@@ -30,7 +30,7 @@ router.post("/add", 	upload.single("avatar"),async function (req, res, next) {
 });
 router.get("/delete/:id", async function (req, res, next) {
 	let product = await Product.findByIdAndDelete(req.params.id);
-	if (!product) return res.status(404).send("The Product with the given ID was not found.");
+	if (!product) return res.status(404).send("ID was not found.");
 	res.redirect("/products");
 });
 
